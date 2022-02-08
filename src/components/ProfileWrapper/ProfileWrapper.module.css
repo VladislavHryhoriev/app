@@ -1,0 +1,13 @@
+.profileWrapper {
+	grid-area: m;
+}
+
+.profileBanner {
+	background-image: url("../../resource/banner.jpg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 240px;
+}
+

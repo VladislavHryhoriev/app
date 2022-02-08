@@ -1,0 +1,12 @@
+.navbar {
+	grid-area: n;
+}
+
+.navbarList {
+	margin: 20px;
+}
+
+.navbarLink {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+}

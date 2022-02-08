@@ -1,0 +1,34 @@
+body {
+	background: #222;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.app-wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 230px 1fr;
+	grid-template-rows: 90px 1fr;
+	grid-template-areas:
+		"h h"
+		"n m";
+	grid-gap: 10px;
+	color: #fff;
+}
+
+.app-wrapper > * {
+	background: #444;
+}
