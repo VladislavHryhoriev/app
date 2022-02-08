@@ -3,12 +3,12 @@ import PostBlock from './PostBlock/PostBlock';
 import s from './ProfileWrapper.module.css'
 import Profile from './Profile/Profile';
 
-const ProfileWrapper = () => {
+const ProfileWrapper = (props) => {
 	return (
 		<main className={s.profileWrapper}>
 			<div className={s.profileBanner} />
-			<Profile />
-			<PostBlock />
+			<Profile profileInfo={props.profilePage.profileInfo} />
+			<PostBlock posts={props.profilePage.posts} addPost={props.addPost} />
 		</main>
 	);
 };

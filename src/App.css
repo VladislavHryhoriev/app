@@ -9,6 +9,7 @@ body {
 }
 
 a {
+	height: 100%;
 	text-decoration: none;
 }
 
@@ -30,5 +31,5 @@ ul {
 }
 
 .app-wrapper > * {
-	background: #444;
+	background: #333;
 }

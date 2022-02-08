@@ -1,0 +1,48 @@
+.messages {
+	flex-grow: 4;
+	padding: 20px;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	height: 380px;
+	padding: 20px;
+	background: #222;
+}
+
+.message {
+	width: max-content;
+	margin-bottom: 5px;
+	padding: 10px 20px;
+	background: #666;
+}
+
+.message.author {
+	background: #4af;
+	align-self: flex-end;
+}
+
+.sendArea {
+	display: flex;
+	height: 50px;
+	border: none;
+}
+
+.area {
+	width: 80%;
+	height: 100%;
+	padding: 5px 10px;
+	border: inherit;
+	background: #555;
+	color: #fff;
+	resize: none;
+}
+
+.button {
+	width: 20%;
+	height: 100%;
+	border: inherit;
+	background: #4af;
+	color: #fff;
+}

@@ -1,0 +1,22 @@
+.dialogList {
+	padding: 20px;
+	flex-grow: 1;
+}
+
+.dialog {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	padding: 10px;
+	background: #444;
+}
+
+.avatar {
+	width: 45px;
+	border-radius: 50%;
+}
+
+.username {
+	font-size: 1rem;
+	margin-left: 10px;
+}

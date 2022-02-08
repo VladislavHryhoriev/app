@@ -1,23 +1,23 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
 	return (
 		<div className={s.profileInfo}>
-			<h2 className={s.nickname}>Анна В.</h2>
+			<h2 className={s.nickname}>{props.profileInfo.username}</h2>
 			<ul className={s.subInfo}>
 				{/* Вынести для каждого element */}
 				<li className={s.element}>
-					День рождения: 10 апреля
+					День рождения: {props.profileInfo.birthday}
 				</li>
 				<li className={s.element}>
-					Город: Киев
+					Город: {props.profileInfo.city}
 				</li>
 				<li className={s.element}>
-					Образование: BSU'9
+					Образование: {props.profileInfo.education}
 				</li>
 				<li className={s.element}>
-					Веб сайт: https://vk.com/anna_V
+					Веб сайт: {props.profileInfo.website}
 				</li>
 				{/* Вынести для каждого element */}
 			</ul>
