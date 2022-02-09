@@ -1,7 +1,5 @@
-import { rerenderEntireTree } from '../index'
-
 let store = {
-	state: {
+	_state: {
 		profilePage: {
 			profileInfo: {
 				username: "Михаил Ржевский",
@@ -22,6 +20,7 @@ let store = {
 					likesCount: 3,
 				},
 			],
+			newPostText: "text message",
 		},
 		dialogsPage: {
 			users: [
@@ -68,24 +67,37 @@ let store = {
 		},
 	},
 
-	_rerenderEntireTree() {
-		console.log('State changed');
+	getState() {
+		return this._state;
 	},
 
-	_subscribe(observer) {
-		this._rerenderEntireTree = observer;
+	_callSubscriber() {
+		// zero
 	},
 
-}
+	addPost() {
+		let newPost = {
+			id: 3,
+			message: this._state.profilePage.newPostText,
+			likesCount: 0,
+		};
+		this._state.profilePage.posts.push(newPost);
+		this._state.profilePage.newPostText = '';
+		this._callSubscriber(this._state);
+	},
 
-export let addPost = () => {
-	let newPost = {
-		id: 3,
-		message: "Новый пост",
-		likesCount: 0,
-	};
-	store.state.profilePage.posts.push(newPost);
-	rerenderEntireTree();
-}
+	updateNewPostText(newText) {
+		this._state.profilePage.newPostText = newText;
+		this._callSubscriber(this._state);
+	},
+
+	subscribe(observer) {
+		this._callSubscriber = observer;
+	},
+
+};
+
+window.store = store;
+
 
 export default store;

@@ -2,7 +2,11 @@ import React from 'react';
 import s from './ProfileInfo.module.css'
 
 const ProfileInfo = (props) => {
+
+
 	return (
+
+
 		<div className={s.profileInfo}>
 			<h2 className={s.nickname}>{props.profileInfo.username}</h2>
 			<ul className={s.subInfo}>

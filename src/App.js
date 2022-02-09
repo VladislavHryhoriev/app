@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Router, Routes } from 'react-router'
+import { Route, Routes } from 'react-router'
 import './App.css'
 import Dialogs from './components/Dialogs/Dialogs'
 import Header from './components/Header/Header'
@@ -16,15 +16,16 @@ let App = (props) => {
 					<Route path="/"
 						element={
 							<ProfileWrapper
-								profilePage={props.store.state.profilePage}
+								profilePage={props.state.profilePage}
 								addPost={props.addPost}
+								updateNewPostText={props.updateNewPostText}
 							/>
 						}
 					/>
 					<Route path="/dialogs"
 						element={
 							<Dialogs
-								dialogsPage={props.store.state.dialogsPage}
+								dialogsPage={props.state.dialogsPage}
 							/>
 						}
 					/>

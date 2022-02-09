@@ -4,13 +4,13 @@ import s from './NewPost.module.css';
 const NewPost = (props) => {
 	let refTextArea = React.createRef();
 
-	let updateText = () => {
-		let text = refTextArea.current.value;
+	let addPost = () => {
+		props.addPost();
 	};
 
-	let addPost = () => {
+	let onPostChange = () => {
 		let text = refTextArea.current.value;
-		props.addPost(text);
+		props.updateNewPostText(text);
 	};
 
 	return (
@@ -18,10 +18,10 @@ const NewPost = (props) => {
 			<h2 className={s.title}>Мои посты</h2>
 			<textarea
 				ref={refTextArea}
-				onChange={updateText}
+				onChange={onPostChange}
 				className={s.area}
 				placeholder="Ваши новости..."
-			// value="Заглушка"
+				value={props.newPostText}
 			/>
 			<button onClick={addPost} className={s.button}>Отправить</button>
 		</div>

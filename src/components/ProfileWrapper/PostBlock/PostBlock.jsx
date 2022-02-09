@@ -7,7 +7,11 @@ import PostList from './PostList/PostList';
 const PostBlock = (props) => {
 	return (
 		<div className={s.postsBlock}>
-			<NewPost addPost={props.addPost} />
+			<NewPost
+				addPost={props.addPost}
+				newPostText={props.newPostText}
+				updateNewPostText={props.updateNewPostText}
+			/>
 			<PostList posts={props.posts} />
 		</div>
 	);
