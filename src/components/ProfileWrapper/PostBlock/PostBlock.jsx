@@ -8,9 +8,8 @@ const PostBlock = (props) => {
 	return (
 		<div className={s.postsBlock}>
 			<NewPost
-				addPost={props.addPost}
 				newPostText={props.newPostText}
-				updateNewPostText={props.updateNewPostText}
+				dispatch={props.dispatch}
 			/>
 			<PostList posts={props.posts} />
 		</div>

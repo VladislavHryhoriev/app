@@ -17,8 +17,7 @@ let App = (props) => {
 						element={
 							<ProfileWrapper
 								profilePage={props.state.profilePage}
-								addPost={props.addPost}
-								updateNewPostText={props.updateNewPostText}
+								dispatch={props.dispatch}
 							/>
 						}
 					/>

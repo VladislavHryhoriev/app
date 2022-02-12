@@ -4,14 +4,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import store from './redux/state';
 
-export let rerenderEntireTree = () => {
+export let rerenderEntireTree = (state) => {
 	ReactDOM.render(
 		<React.StrictMode>
 			<BrowserRouter>
-				<App
-					state={store.getState()}
-					addPost={store.addPost.bind(store)}
-					updateNewPostText={store.updateNewPostText.bind(store)}
+				<App state={state} dispatch={store.dispatch.bind(store)}
 				/>
 			</BrowserRouter>
 		</React.StrictMode>,
