@@ -1,5 +1,7 @@
 .messages {
 	flex-grow: 4;
+	max-width: 650px;
+
 	padding: 20px;
 }
 
@@ -13,6 +15,7 @@
 
 .message {
 	width: max-content;
+	max-width: 350px;
 	margin-bottom: 5px;
 	padding: 10px 20px;
 	background: #666;

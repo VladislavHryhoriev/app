@@ -25,6 +25,8 @@ let App = (props) => {
 						element={
 							<Dialogs
 								dialogsPage={props.state.dialogsPage}
+								dispatch={props.dispatch}
+								store={props.store}
 							/>
 						}
 					/>

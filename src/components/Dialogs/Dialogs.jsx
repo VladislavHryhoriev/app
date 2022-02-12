@@ -8,7 +8,12 @@ const Dialogs = (props) => {
 	return (
 		<div className={s.dailogs}>
 			<DialogList users={props.dialogsPage.users} />
-			<Messages messages={props.dialogsPage.messages} />
+			<Messages
+				messages={props.dialogsPage.messages}
+				dispatch={props.dispatch}
+				store={props.store}
+			/>
+
 		</div>
 	);
 };
