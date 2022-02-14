@@ -1,7 +1,54 @@
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
 const SEND_MESSAGE = "SEND_MESSAGE";
 
-const dialogsReducer = (state, action) => {
+let initialState = {
+	users: [
+		{
+			id: 1,
+			username: "Дмитрий В.",
+		},
+		{
+			id: 2,
+			username: "Александр Д.",
+		},
+		{
+			id: 3,
+			username: "Илья К.",
+		},
+		{
+			id: 4,
+			username: "Анастасия С.",
+		},
+	],
+
+	messages: [
+		{
+			id: 1,
+			message: "Привет",
+			isAuthor: true,
+		},
+		{
+			id: 2,
+			message: "Привет",
+			isAuthor: false,
+		},
+		{
+			id: 3,
+			message: "Как дела?",
+			isAuthor: true,
+		},
+		{
+			id: 4,
+			message: "Нормально",
+			isAuthor: false,
+		},
+	],
+
+	newMessageBody: "",
+
+};
+
+const dialogsReducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case UPDATE_NEW_MESSAGE_BODY:
@@ -21,7 +68,7 @@ const dialogsReducer = (state, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
 

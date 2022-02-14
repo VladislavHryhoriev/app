@@ -1,18 +1,16 @@
 import React from 'react';
-import { addPostCreator, updateNewPostTextCreator } from '../../../../redux/profile-reducer';
 import s from './NewPost.module.css';
 
 const NewPost = (props) => {
 	let refTextArea = React.createRef();
 
-	let addPost = () => {
-		props.dispatch(addPostCreator());
+	let onAddPost = () => {
+		props.addPost();
 	};
 
 	let onPostChange = () => {
 		let text = refTextArea.current.value;
-		let action = updateNewPostTextCreator(text);
-		props.dispatch(action);
+		props.updateNewPostText(text);
 	};
 
 	return (
@@ -25,7 +23,7 @@ const NewPost = (props) => {
 				placeholder="Ваши новости..."
 				value={props.newPostText}
 			/>
-			<button onClick={addPost} className={s.button}>Отправить</button>
+			<button onClick={onAddPost} className={s.button}>Отправить</button>
 		</div>
 	);
 };

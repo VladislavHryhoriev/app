@@ -1,7 +1,31 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-const profileReducer = (state, action) => {
+let initialState = {
+	profileInfo: {
+		username: "Михаил Ржевский",
+		birthday: "7 июля 2003 г",
+		city: "Ржев",
+		education: "Ржевский колледж (бывш. РАК, РМТ)",
+		website: "https://vk.com/mihail_foksi"
+	},
+
+	posts: [
+		{
+			id: 1,
+			message: "Привет, как дела?",
+			likesCount: 35,
+		},
+		{
+			id: 2,
+			message: "Это мой второй пост.",
+			likesCount: 3,
+		},
+	],
+	newPostText: "",
+};
+
+const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_POST:
 			let newPost = {

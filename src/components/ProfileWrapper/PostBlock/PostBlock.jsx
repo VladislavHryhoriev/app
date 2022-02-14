@@ -1,16 +1,13 @@
 import React from 'react';
 import s from './PostBlock.module.css'
-import NewPost from './NewPost/NewPost';
 import PostList from './PostList/PostList';
+import NewPostContainer from './NewPost/NewPostContainer';
 
 
 const PostBlock = (props) => {
 	return (
 		<div className={s.postsBlock}>
-			<NewPost
-				newPostText={props.newPostText}
-				dispatch={props.dispatch}
-			/>
+			<NewPostContainer store={props.store} />
 			<PostList posts={props.posts} />
 		</div>
 	);

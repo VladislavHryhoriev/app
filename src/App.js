@@ -16,8 +16,7 @@ let App = (props) => {
 					<Route path="/"
 						element={
 							<ProfileWrapper
-								profilePage={props.state.profilePage}
-								dispatch={props.dispatch}
+								store={props.store}
 							/>
 						}
 					/>
